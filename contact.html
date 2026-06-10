@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto — Carchic</title>
+  <meta name="description" content="Contacta con el equipo de Carchic. Estamos aquí para ayudarte con cualquier duda sobre nuestras subastas de vehículos.">
+
+  <!-- CSS de BidJS (incluye Bootstrap 3) -->
+  <link rel="stylesheet" href="https://brighton.eu-central-1.bidjs.com/client/bootstrap3/css/bidjs--full.min.css">
+
+  <!-- CSS propio -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Barra de navegación -->
+  <nav class="navbar navbar-default carchic-navbar">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand carchic-navbar__brand" href="index.html">CARCHIC</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li><a href="about.html">Sobre nosotros</a></li>
+        <li class="active"><a href="contact.html">Contacto</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Contenido de la página -->
+  <div class="container" style="padding-top: 48px; padding-bottom: 64px;">
+    <h1>Contacto</h1>
+    <p>¿Tienes alguna pregunta? Escríbenos y te responderemos lo antes posible.</p>
+  </div>
+
+  <!-- Modal de BidJS (necesario para autenticación) -->
+  <div class="bidlogix-app bidjs-app">
+    <div id="bidlogix-modal"></div>
+  </div>
+
+  <script>
+    window.bidjs = {
+      config: {
+        serverName: 'brighton',
+        serverRegion: 'eu-central-1',
+        clientId: 'carchic'
+      },
+      options: {
+        allowTitleChange: true,
+        allowMetaDescriptionChange: true,
+        syncHostLocale: true
+      }
+    }
+  </script>
+  <script src="https://brighton.eu-central-1.bidjs.com/client/bootstrap3/js/bidjs.min.js"></script>
+</body>
+</html>
