@@ -530,6 +530,19 @@ body {
   color: var(--color-light-blue);
 }
 
+/* Navbar principal */
+.carchic-navbar {
+  margin-bottom: 0;
+}
+
+.carchic-navbar__brand {
+  font-size: var(--text-base);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  padding-top: 18px;
+  padding-bottom: 18px;
+}
+
 /* Divider decorativo */
 .carchic-divider {
   border: none;

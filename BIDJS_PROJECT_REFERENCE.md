@@ -10,9 +10,9 @@ Generado a partir de la documentación oficial de BidJS y del onboarding del cli
 ```js
 window.bidjs = {
   config: {
-    serverName: 'brighton',
-    serverRegion: 'eu-central-1',
-    clientId: 'carchic'
+    clientId: 'carchic',
+    region: 'eu-central-1',
+    server: 'brighton'
   }
 }
 ```
@@ -50,11 +50,20 @@ Escribir los estilos propios en `css/styles.css` siendo siempre específicos en 
  
 ## 3. Instalación de BidJS
  
-BidJS se basa en **Bootstrap 3**. Incluir en el `<head>`:
+BidJS se basa en **Bootstrap 3**. La config debe ir en el `<head>` **antes** del CSS/JS. El CSS se carga con preload para no bloquear el render; el JS con `defer`:
  
 ```html
-<!-- CSS de BidJS (incluye Bootstrap 3) -->
-<link rel="stylesheet" href="https://brighton.eu-central-1.bidjs.com/client/bootstrap3/css/bidjs--full.min.css">
+<!-- BidJS Config (debe ir ANTES del CSS/JS) -->
+<script>
+  window.bidjs = { config: { ... } }
+</script>
+
+<!-- BidJS CSS (carga no bloqueante + fallback noscript) -->
+<noscript><link href="https://static.bidjs.com/5/bootstrap3/css/bidjs--full.min.css" rel="stylesheet" type="text/css"></noscript>
+<link rel="preload" href="https://static.bidjs.com/5/bootstrap3/css/bidjs--full.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+<!-- BidJS JS -->
+<script defer src="https://static.bidjs.com/5/bootstrap3/js/bidjs.min.js"></script>
 ```
  
 Contenedores obligatorios en el `<body>`:
@@ -71,12 +80,6 @@ Contenedores obligatorios en el `<body>`:
 </div>
 ```
  
-Script al final del `<body>`:
- 
-```html
-<script src="https://brighton.eu-central-1.bidjs.com/client/bootstrap3/js/bidjs.min.js"></script>
-```
- 
 ---
  
 ## 4. Configuración completa recomendada
@@ -84,9 +87,9 @@ Script al final del `<body>`:
 ```js
 window.bidjs = {
   config: {
-    serverName: 'brighton',
-    serverRegion: 'eu-central-1',
     clientId: 'carchic',
+    region: 'eu-central-1',
+    server: 'brighton',
     googleMapsApiKey: '' // Añadir si se usan mapas de ubicación
   },
   modules: {
@@ -184,9 +187,9 @@ Para que los hooks de navegación (mostrar/ocultar según login) funcionen en p�
 // En about.html, contact.html, etc.
 window.bidjs = {
   config: {
-    serverName: 'brighton',
-    serverRegion: 'eu-central-1',
-    clientId: 'carchic'
+    clientId: 'carchic',
+    region: 'eu-central-1',
+    server: 'brighton'
   },
   modules: {
     auctionDetails: false,

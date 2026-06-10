@@ -3,54 +3,45 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Carchic — Subastas de vehículos de ocasión</title>
-  <meta name="description" content="Subastas online de vehículos de ocasión en Carchic. Puja por tu próximo coche en subastas por tiempo, sin esperas ni intermediarios.">
+  <title>Carchic — Subastas de Vehículos</title>
+  <meta name="description" content="Subastas de vehículos de ocasión seleccionados.">
 
-  <!-- CSS de BidJS (incluye Bootstrap 3) -->
-  <link rel="stylesheet" href="https://brighton.eu-central-1.bidjs.com/client/bootstrap3/css/bidjs--full.min.css">
-
-  <!-- CSS propio -->
-  <link rel="stylesheet" href="css/styles.css">
-</head>
-<body>
-
-  <!-- Modal de BidJS -->
-  <div class="bidlogix-app bidjs-app">
-    <div id="bidlogix-modal"></div>
-  </div>
-
-  <!-- Contenedor principal de BidJS -->
-  <div class="container bidlogix-app">
-    <div id="bidjs" class="bidjs-app"></div>
-  </div>
-
-  <!-- Configuración de BidJS: debe definirse antes de cargar el script -->
+  <!-- BidJS Config -->
   <script>
     window.bidjs = {
       config: {
-        serverName: 'brighton',
-        serverRegion: 'eu-central-1',
-        clientId: 'carchic'
-      },
-      modules: {
-        auctionDetails: '#!/auctions/%AUCTION_ID%',
-        auctionsArchived: true,
-        invoices: true,
-        lotDetails: '#!/auctions/%AUCTION_ID%/listings/%ITEM_ID%',
-        mySales: true,
-        login: true,
-        register: true,
-        webcast: false
-      },
-      options: {
-        allowTitleChange: true,
-        allowMetaDescriptionChange: true,
-        syncHostLocale: true
+        clientId: 'carchic',
+        region: 'eu-central-1',
+        server: 'brighton',
+        googleMapsApiKey: ''
       }
     }
   </script>
 
-  <!-- Script de BidJS -->
-  <script src="https://brighton.eu-central-1.bidjs.com/client/bootstrap3/js/bidjs.min.js"></script>
+  <!-- BidJS CSS -->
+  <noscript><link href="https://static.bidjs.com/5/bootstrap3/css/bidjs--full.min.css" rel="stylesheet" type="text/css"></noscript>
+  <link rel="preload" href="https://static.bidjs.com/5/bootstrap3/css/bidjs--full.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+  <!-- BidJS JS -->
+  <script defer src="https://static.bidjs.com/5/bootstrap3/js/bidjs.min.js"></script>
+
+  <!-- Estilos propios -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Modal de BidJS (obligatorio) -->
+  <div class="bidlogix-app bidjs-app">
+    <div id="bidlogix-modal"></div>
+  </div>
+
+  <!-- Contenedor principal de BidJS (obligatorio) -->
+  <div class="container bidlogix-app">
+    <div id="bidjs" class="bidjs-app"></div>
+  </div>
+
+  <!-- JS propio -->
+  <script src="js/main.js"></script>
+
 </body>
 </html>
