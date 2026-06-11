@@ -1,0 +1,125 @@
+@charset "UTF-8";
+
+/* ============================================================
+   CARCHIC — Reset / Normalize
+   ------------------------------------------------------------
+   Reset minimal y SEGURO para una web que embebe BidJS,
+   que ya trae su propio Bootstrap 3.
+
+   PRINCIPIO CLAVE: las reglas opinables van con :where(),
+   por lo que su especificidad es 0. Bootstrap, BidJS y
+   styles.css SIEMPRE ganan al reset → nunca rompemos la UI
+   dentro de #bidjs ni de #bidlogix-modal, sin importar el
+   orden de carga.
+
+   Del reset original se han DESCARTADO las reglas que son
+   destructivas en un sitio con Bootstrap/BidJS:
+     - a { display: block }            → rompe navbar y enlaces de BidJS
+     - svg { width: 100% }             → agranda todos los iconos
+     - img,video { width: 100% }       → fuerza todo a ancho completo
+     - *::before/after { display:block } → rompe glyphicons, carets, clearfix
+     - border: 0 en todo               → borra los bordes de Bootstrap
+     - li { list-style: none } global  → quita viñetas dentro de BidJS
+     - font:inherit + line-height:1em en h1-h6/p → pelea con el design system
+     - * { margin:0; padding:0 }       → colapsa el espaciado de Bootstrap
+
+   Cargar SIEMPRE antes de styles.css.
+   ============================================================ */
+
+
+/* ------------------------------------------------------------
+   1. Box model coherente
+   (Bootstrap ya lo aplica; aquí lo reforzamos a nivel base)
+   ------------------------------------------------------------ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+
+/* ------------------------------------------------------------
+   2. Accesibilidad: respeta "reducir movimiento" del sistema
+   ------------------------------------------------------------ */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+
+/* ------------------------------------------------------------
+   3. Raíz y documento
+   ------------------------------------------------------------ */
+:where(html) {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  -moz-tab-size: 4;
+  tab-size: 4;
+}
+
+:where(body) {
+  margin: 0;
+  min-height: 100vh;
+}
+
+
+/* ------------------------------------------------------------
+   4. Bloques de texto: solo limpiamos márgenes heredados.
+   Tamaños, pesos y line-height los define el design system
+   en styles.css, así que NO se tocan aquí.
+   ------------------------------------------------------------ */
+:where(h1, h2, h3, h4, h5, h6, p, figure, blockquote, dl, dd) {
+  margin: 0;
+}
+
+/* Solo listas SIN clase (las de Bootstrap/BidJS llevan clase
+   y conservan su padding/viñetas intactos) */
+:where(ul, ol):not([class]) {
+  padding-left: 0;
+}
+
+
+/* ------------------------------------------------------------
+   5. Medios responsive — EXCLUYENDO los contenedores de BidJS.
+   No tocamos <svg> para no alterar el tamaño de los iconos.
+   ------------------------------------------------------------ */
+:where(img, picture, video, canvas):not(#bidjs *):not(#bidlogix-modal *) {
+  max-width: 100%;
+  height: auto;
+}
+
+:where(img) {
+  vertical-align: middle;   /* elimina el hueco inferior del inline */
+  font-style: italic;       /* el texto alt se ve distinto si la imagen falla */
+}
+
+
+/* ------------------------------------------------------------
+   6. Formularios heredan la tipografía (normalize estándar)
+   ------------------------------------------------------------ */
+:where(input, button, textarea, select) {
+  font: inherit;
+  color: inherit;
+}
+
+
+/* ------------------------------------------------------------
+   7. Tipografía más legible en el contenido propio
+   ------------------------------------------------------------ */
+:where(p, h1, h2, h3, h4, h5, h6) {
+  overflow-wrap: break-word;
+}
+
+:where(p) {
+  text-wrap: pretty;
+}
+
+:where(h1, h2, h3, h4, h5, h6) {
+  text-wrap: balance;
+}

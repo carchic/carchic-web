@@ -530,17 +530,103 @@ body {
   color: var(--color-light-blue);
 }
 
-/* Navbar principal */
-.carchic-navbar {
+/* ------------------------------------------------------------
+   Navbar principal — moderna, fondo Dark Azure
+   Todo va scoped a .carchic-navbar para no tocar ningún
+   navbar de Bootstrap/BidJS.
+   ------------------------------------------------------------ */
+.carchic-navbar.navbar-default {
   margin-bottom: 0;
+  background-color: var(--color-dark-azure);
+  border: none;
+  box-shadow: var(--shadow-sm);
 }
 
+/* Marca */
 .carchic-navbar__brand {
   font-size: var(--text-base);
   letter-spacing: var(--tracking-wider);
   text-transform: uppercase;
   padding-top: 18px;
   padding-bottom: 18px;
+}
+
+.carchic-navbar.navbar-default .navbar-brand {
+  color: var(--color-bg);
+}
+
+.carchic-navbar.navbar-default .navbar-brand:hover,
+.carchic-navbar.navbar-default .navbar-brand:focus {
+  color: #ffffff;
+  background-color: transparent;
+}
+
+/* Enlaces — texto claro sobre fondo azul */
+.carchic-navbar.navbar-default .navbar-nav > li > a {
+  color: var(--color-bg);
+  font-size: var(--text-sm);
+  font-weight: var(--font-medium);
+  letter-spacing: var(--tracking-wide);
+  transition: background-color var(--transition-fast),
+              color var(--transition-fast);
+}
+
+.carchic-navbar.navbar-default .navbar-nav > li > a:hover,
+.carchic-navbar.navbar-default .navbar-nav > li > a:focus {
+  color: #ffffff;
+  background-color: var(--color-american-navy);
+}
+
+/* Estado activo y enlace abierto */
+.carchic-navbar.navbar-default .navbar-nav > .active > a,
+.carchic-navbar.navbar-default .navbar-nav > .active > a:hover,
+.carchic-navbar.navbar-default .navbar-nav > .active > a:focus,
+.carchic-navbar.navbar-default .navbar-nav > .open > a,
+.carchic-navbar.navbar-default .navbar-nav > .open > a:hover,
+.carchic-navbar.navbar-default .navbar-nav > .open > a:focus {
+  color: #ffffff;
+  background-color: var(--color-american-navy);
+}
+
+/* Alineación a la derecha en escritorio.
+   Quitamos los floats de Bootstrap y usamos flex para que
+   los enlaces queden agrupados a la derecha, con la marca
+   a la izquierda. */
+@media (min-width: 768px) {
+  .carchic-navbar .navbar-collapse {
+    display: flex !important;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  .carchic-navbar .navbar-nav {
+    float: none;
+    margin: 0;
+  }
+
+  .carchic-navbar .navbar-nav.navbar-right {
+    margin-right: 0;
+  }
+}
+
+/* Botón hamburguesa (móvil) sobre fondo oscuro */
+.carchic-navbar.navbar-default .navbar-toggle {
+  border-color: var(--color-light-blue);
+}
+
+.carchic-navbar.navbar-default .navbar-toggle:hover,
+.carchic-navbar.navbar-default .navbar-toggle:focus {
+  background-color: var(--color-american-navy);
+}
+
+.carchic-navbar.navbar-default .navbar-toggle .icon-bar {
+  background-color: var(--color-bg);
+}
+
+/* Separadores del menú desplegado en móvil */
+.carchic-navbar.navbar-default .navbar-collapse,
+.carchic-navbar.navbar-default .navbar-form {
+  border-color: var(--color-american-navy);
 }
 
 /* Divider decorativo */
