@@ -18,12 +18,35 @@
   <nav class="navbar navbar-default carchic-navbar">
     <div class="container">
       <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#carchic-nav">
+          <span class="sr-only">Menú</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
         <a class="navbar-brand carchic-navbar__brand" href="index.html">CARCHIC</a>
       </div>
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="about.html">Sobre nosotros</a></li>
-        <li><a href="contact.html">Contacto</a></li>
-      </ul>
+      <div class="collapse navbar-collapse" id="carchic-nav">
+        <ul class="nav navbar-nav">
+          <li><a href="index.html">Subastas</a></li>
+          <li><a href="about.html">Sobre nosotros</a></li>
+          <li><a href="contact.html">Contacto</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li class="x-bidlogix--authenticated-hide">
+            <a href="#!/login">Iniciar sesión</a>
+          </li>
+          <li class="x-bidlogix--authenticated-show">
+            <a href="#!/account" class="x-bidlogix--templated-user"></a>
+          </li>
+          <li class="x-bidlogix--authenticated-show">
+            <a href="#!/highBids">Mis pujas</a>
+          </li>
+          <li class="x-bidlogix--administrator-show">
+            <a href="#!/admin">Admin</a>
+          </li>
+        </ul>
+      </div>
     </div>
   </nav>
 
