@@ -131,20 +131,22 @@ Ejemplo de menú de navegación:
   <a href="index.html">Subastas</a>
   <a href="about.html">Quiénes somos</a>
  
-  <!-- Solo visible si NO está logueado -->
-  <a href="#!/login" class="x-bidlogix--authenticated-hide">Iniciar sesión</a>
+  <!-- Solo visible si NO está logueado (sin hidden: visible por defecto) -->
+  <a href="index.html#!/login" class="x-bidlogix--authenticated-hide">Iniciar sesión</a>
  
-  <!-- Solo visible si está logueado -->
-  <span class="x-bidlogix--authenticated-show x-bidlogix--templated-user"></span>
-  <a href="#!/account" class="x-bidlogix--authenticated-show">Mi cuenta</a>
-  <a href="#!/highBids" class="x-bidlogix--authenticated-show">Mis pujas</a>
+  <!-- Solo visible si está logueado (hidden por defecto para evitar flash) -->
+  <a href="index.html#!/account" class="x-bidlogix--authenticated-show hidden">Mi cuenta</a>
+  <a href="index.html#!/highBids" class="x-bidlogix--authenticated-show hidden">Mis pujas</a>
+  <a href="index.html#!/logout" class="x-bidlogix--authenticated-show hidden">Cerrar sesión</a>
  
   <!-- Solo visible para administradores -->
-  <a class="x-bidlogix--administrator-show">Panel Admin</a>
+  <a class="x-bidlogix--administrator-show hidden">Panel Admin</a>
 </nav>
 ```
  
-> ⚠️ Si el sitio no tiene Bootstrap, añadir manualmente: `.hidden { display: none; }`
+> ⚠️ Los elementos `x-bidlogix--authenticated-show` deben llevar siempre `hidden` por defecto. Sin eso, aparecen visibles durante el instante que tarda BidJS en inicializarse (flash de contenido).
+>
+> ⚠️ Para que los hooks funcionen en páginas secundarias (about, contact…), `#bidjs` y `#bidlogix-modal` son **ambos** obligatorios, aunque la página use `defaultModule: 'empty'`.
  
 ---
  
