@@ -3,101 +3,104 @@
    Base styles, CSS variables y overrides de Bootstrap 3
    ============================================================ */
 
-
 /* ------------------------------------------------------------
    1. GOOGLE FONTS IMPORT
    ------------------------------------------------------------ */
-@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600;700&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600;700&display=swap");
 
 /* ------------------------------------------------------------
    2. CSS CUSTOM PROPERTIES (DESIGN TOKENS)
    ------------------------------------------------------------ */
 :root {
-
   /* --- Colores de marca --- */
 
   /* Azules principales */
-  --color-american-navy:    #002E5F;
-  --color-dark-azure:       #003D7F;   /* CTA / botón principal */
-  --color-arabian-sea:      #2864A4;
-  --color-light-blue:       #608CBB;
+  --color-blue-500: #002e5f;
+  --color-blue-200: #003d7f; /* CTA / botón principal */
+  --color-blue-100: #2864a4;
+  --color-blue-50: #608cbb;
 
   /* Grises azulados */
-  --color-ink:              #051629;   /* Color del texto principal */
-  --color-uniform-blue:     #11263D;
-  --color-vintage-navy:     #26394D;
-  --color-cadet:            #546475;
+  --color-dark-500: #051629; /* Color del texto principal */
+  --color-dark-200: #11263d;
+  --color-dark-100: #26394d;
+  --color-dark-50: #546475;
 
   /* Acento */
-  --color-racing-red:       #B01212;   /* Solo para énfasis puntual */
+  --color-red: #b01212; /* Solo para énfasis puntual */
 
   /* Fondos */
-  --color-bg:               #F0F3F6;   /* Fondo general de la web */
-  --color-surface:          #FFFFFF;   /* Cards, paneles, modales */
-  --color-surface-subtle:   #E4E9EF;   /* Fondo alternativo suave */
+  --color-light: #f0f3f6; /* Fondo general de la web */
+  --color-white: #ffffff; /* Cards, paneles, modales */
 
   /* --- Tipografía --- */
-  --font-primary:   'Inter', system-ui, sans-serif;
-  --font-display:   'EB Garamond', Georgia, serif;
+  --font-primary: "Inter", system-ui, sans-serif;
+  --font-serif: "EB Garamond", Georgia, serif;
 
   /* Tamaños de fuente */
-  --text-xs:    0.75rem;    /*  12px */
-  --text-sm:    0.875rem;   /*  14px */
-  --text-base:  1rem;       /*  16px */
-  --text-md:    1.125rem;   /*  18px */
-  --text-lg:    1.25rem;    /*  20px */
-  --text-xl:    1.5rem;     /*  24px */
-  --text-2xl:   2rem;       /*  32px */
-  --text-3xl:   2.5rem;     /*  40px */
-  --text-4xl:   3rem;       /*  48px */
+  --text-xs: 0.75rem; /*  12px */
+  --text-sm: 0.875rem; /*  14px */
+  --text-base: 1rem; /*  16px */
+  --text-md: 1.125rem; /*  18px */
+  --text-lg: 1.25rem; /*  20px */
+  --text-xl: 1.5rem; /*  24px */
+  --text-2xl: 2rem; /*  32px */
+  --text-3xl: 2.5rem; /*  40px */
+  --text-4xl: 3rem; /*  48px */
+  --text-5xl: 3.5rem; 
+  --text-6xl: 4rem; 
 
   /* Pesos */
-  --font-light:     300;
-  --font-regular:   400;
-  --font-medium:    500;
-  --font-semibold:  600;
-  --font-bold:      700;
+  --font-light: 300;
+  --font-regular: 400;
+  --font-medium: 500;
+  --font-semibold: 600;
+  --font-bold: 700;
+
+  /* Line height */
+  --line-height-sm: 1.2;
+  --line-height-base: 1.5;
+  --line-height-lg: 1.7;
 
   /* Kerning / Letter-spacing */
-  --tracking-tight:   -0.02em;   /* Títulos grandes Inter */
-  --tracking-normal:   0em;      /* Cuerpo de texto */
-  --tracking-wide:     0.06em;   /* Labels, tags, texto en mayúsculas */
-  --tracking-wider:    0.12em;   /* Subtítulos en caps, badges */
+  --tracking-tight: -0.03em;
+  --tracking-normal: 0em;
+  --tracking-wide: 0.06em;
+  --tracking-wider: 0.12em;
 
   /* Interlineado */
-  --leading-tight:    1.2;
-  --leading-normal:   1.5;
-  --leading-relaxed:  1.7;
+  --leading-tight: 1.2;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.7;
 
   /* --- Border radius --- */
-  --radius-sm:   2px;    /* Botones pequeños, inputs */
-  --radius-md:   4px;    /* Botones estándar */
-  --radius-lg:   6px;    /* Cards, paneles */
-  --radius-xl:   8px;    /* Cards grandes, modales */
+  --radius-sm: 2px; /* Botones pequeños, inputs */
+  --radius-md: 4px; /* Botones estándar */
+  --radius-lg: 6px; /* Cards, paneles */
+  --radius-xl: 8px; /* Cards grandes, modales */
 
   /* --- Espaciado --- */
-  --space-1:   0.25rem;   /*  4px */
-  --space-2:   0.5rem;    /*  8px */
-  --space-3:   0.75rem;   /* 12px */
-  --space-4:   1rem;      /* 16px */
-  --space-5:   1.25rem;   /* 20px */
-  --space-6:   1.5rem;    /* 24px */
-  --space-8:   2rem;      /* 32px */
-  --space-10:  2.5rem;    /* 40px */
-  --space-12:  3rem;      /* 48px */
-  --space-16:  4rem;      /* 64px */
+  --space-4: 0.25rem; /*  4px */
+  --space-8: 0.5rem; /*  8px */
+  --space-12: 0.75rem; /* 12px */
+  --space-16: 1rem; /* 16px */
+  --space-20: 1.25rem; /* 20px */
+  --space-24: 1.5rem; /* 24px */
+  --space-32: 2rem; /* 32px */
+  --space-40: 2.5rem; /* 40px */
+  --space-48: 3rem; /* 48px */
+  --space-64: 4rem; /* 64px */
 
   /* --- Sombras --- */
-  --shadow-sm:  0 1px 3px rgba(5, 22, 41, 0.08);
-  --shadow-md:  0 4px 12px rgba(5, 22, 41, 0.10);
-  --shadow-lg:  0 8px 24px rgba(5, 22, 41, 0.12);
+  --shadow-sm: 0 1px 3px rgba(5, 22, 41, 0.08);
+  --shadow-md: 0 4px 12px rgba(5, 22, 41, 0.1);
+  --shadow-lg: 0 8px 24px rgba(5, 22, 41, 0.12);
 
   /* --- Transiciones --- */
-  --transition-fast:    150ms ease;
-  --transition-normal:  250ms ease;
+  --transition-fast: 150ms ease;
+  --transition-normal: 250ms ease;
+  --transition-slow: 350ms ease;
 }
-
 
 /* ------------------------------------------------------------
    3. RESET Y BASE
@@ -119,519 +122,668 @@ body {
   font-size: var(--text-base);
   font-weight: var(--font-regular);
   line-height: var(--leading-normal);
-  color: var(--color-ink);
-  background-color: var(--color-bg);
-  letter-spacing: var(--tracking-normal);
-}
-
-
-/* ------------------------------------------------------------
-   4. TIPOGRAFÍA
-   ------------------------------------------------------------ */
-
-/* Títulos principales — Inter apretado */
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-primary);
-  font-weight: var(--font-bold);
-  line-height: var(--leading-tight);
-  letter-spacing: var(--tracking-tight);
-  color: var(--color-ink);
-  margin-top: 0;
-}
-
-h1 { font-size: var(--text-3xl); }
-h2 { font-size: var(--text-2xl); }
-h3 { font-size: var(--text-xl); }
-h4 { font-size: var(--text-lg); }
-h5 { font-size: var(--text-md); }
-h6 { font-size: var(--text-base); }
-
-/* Clase display — EB Garamond para títulos especiales */
-.display-title {
-  font-family: var(--font-display);
-  font-weight: var(--font-regular);
-  line-height: var(--leading-tight);
-  letter-spacing: var(--tracking-tight);
-  color: var(--color-dark-azure);
-}
-
-.display-title--lg {
-  font-size: var(--text-4xl);
-}
-
-.display-title--md {
-  font-size: var(--text-3xl);
-}
-
-/* Labels y texto en mayúsculas */
-.label-caps {
-  font-family: var(--font-primary);
-  font-size: var(--text-xs);
-  font-weight: var(--font-semibold);
-  letter-spacing: var(--tracking-wider);
-  text-transform: uppercase;
-  color: var(--color-cadet);
-}
-
-/* Texto secundario */
-.text-muted-carchic {
-  color: var(--color-cadet);
-  font-size: var(--text-sm);
-}
-
-p {
-  line-height: var(--leading-relaxed);
-  color: var(--color-uniform-blue);
-}
-
-
-/* ------------------------------------------------------------
-   5. OVERRIDE BOOTSTRAP 3 — COLORES Y COMPONENTES
-   ------------------------------------------------------------ */
-
-/* Fondo general */
-body {
-  background-color: var(--color-bg);
-}
-
-/* --- Botones --- */
-.btn {
-  border-radius: var(--radius-md);
-  font-family: var(--font-primary);
-  font-weight: var(--font-medium);
-  font-size: var(--text-sm);
-  letter-spacing: var(--tracking-wide);
-  transition: background-color var(--transition-fast),
-              border-color var(--transition-fast),
-              box-shadow var(--transition-fast);
-  border-width: 1.5px;
-}
-
-.btn-sm {
-  border-radius: var(--radius-sm);
-}
-
-/* Botón primario — Dark Azure */
-.btn-primary {
-  background-color: var(--color-dark-azure);
-  border-color: var(--color-dark-azure);
-  color: #ffffff;
-}
-
-.btn-primary:hover,
-.btn-primary:focus {
-  background-color: var(--color-american-navy);
-  border-color: var(--color-american-navy);
-  color: #ffffff;
-}
-
-.btn-primary:active {
-  background-color: var(--color-american-navy);
-  border-color: var(--color-american-navy);
-}
-
-/* Botón secundario — outline */
-.btn-default {
-  background-color: transparent;
-  border-color: var(--color-dark-azure);
-  color: var(--color-dark-azure);
-}
-
-.btn-default:hover,
-.btn-default:focus {
-  background-color: var(--color-dark-azure);
-  border-color: var(--color-dark-azure);
-  color: #ffffff;
-}
-
-/* Botón de peligro / énfasis — Racing Red */
-.btn-danger {
-  background-color: var(--color-racing-red);
-  border-color: var(--color-racing-red);
-  color: #ffffff;
-}
-
-.btn-danger:hover,
-.btn-danger:focus {
-  background-color: #8f0e0e;
-  border-color: #8f0e0e;
-  color: #ffffff;
-}
-
-/* --- Inputs y formularios --- */
-.form-control {
-  border-radius: var(--radius-md);
-  border-color: var(--color-surface-subtle);
-  color: var(--color-ink);
-  font-family: var(--font-primary);
-  font-size: var(--text-sm);
-  background-color: var(--color-surface);
-  box-shadow: none;
-  transition: border-color var(--transition-fast);
-}
-
-.form-control:focus {
-  border-color: var(--color-arabian-sea);
-  box-shadow: 0 0 0 3px rgba(40, 100, 164, 0.15);
-  outline: none;
-}
-
-/* --- Panel / Card --- */
-.panel {
-  border-radius: var(--radius-lg);
-  border: 1px solid var(--color-surface-subtle);
-  box-shadow: var(--shadow-sm);
-  background-color: var(--color-surface);
-}
-
-.panel-heading {
-  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
-  background-color: var(--color-surface);
-  border-bottom-color: var(--color-surface-subtle);
-  font-family: var(--font-primary);
-  font-weight: var(--font-semibold);
-  color: var(--color-ink);
-}
-
-.panel-default > .panel-heading {
-  background-color: var(--color-surface);
-}
-
-.panel-primary > .panel-heading {
-  background-color: var(--color-dark-azure);
-  border-color: var(--color-dark-azure);
-  color: #ffffff;
-}
-
-/* --- Navbar --- */
-.navbar {
-  border-radius: 0;
-  border: none;
-  box-shadow: var(--shadow-sm);
-}
-
-.navbar-default {
-  background-color: var(--color-surface);
-  border-bottom: 1px solid var(--color-surface-subtle);
-}
-
-.navbar-default .navbar-brand {
-  color: var(--color-dark-azure);
-  font-weight: var(--font-bold);
+  color: var(--color-dark-500);
+  background-color: var(--color-light);
   letter-spacing: var(--tracking-tight);
 }
 
-.navbar-default .navbar-nav > li > a {
-  color: var(--color-vintage-navy);
-  font-size: var(--text-sm);
-  font-weight: var(--font-medium);
-  transition: color var(--transition-fast);
+a {
+  text-decoration: none;
 }
 
-.navbar-default .navbar-nav > li > a:hover,
-.navbar-default .navbar-nav > li > a:focus {
-  color: var(--color-dark-azure);
-  background-color: transparent;
+a {
+  color: inherit;
 }
-
-.navbar-default .navbar-nav > .active > a {
-  color: var(--color-dark-azure);
-  background-color: transparent;
-  font-weight: var(--font-semibold);
-}
-
-/* --- Labels y badges --- */
-.label-primary,
-.badge {
-  background-color: var(--color-dark-azure);
-  border-radius: var(--radius-sm);
-  font-family: var(--font-primary);
-  font-size: var(--text-xs);
-  font-weight: var(--font-semibold);
-  letter-spacing: var(--tracking-wide);
-}
-
-.label-danger {
-  background-color: var(--color-racing-red);
-}
-
-/* --- Alerts --- */
-.alert {
-  border-radius: var(--radius-lg);
-  font-size: var(--text-sm);
-  border-width: 1px;
-}
-
-.alert-info {
-  background-color: rgba(96, 140, 187, 0.12);
-  border-color: var(--color-light-blue);
-  color: var(--color-dark-azure);
-}
-
-.alert-danger {
-  background-color: rgba(176, 18, 18, 0.08);
-  border-color: var(--color-racing-red);
-  color: var(--color-racing-red);
-}
-
-/* --- Tablas --- */
-.table {
-  font-size: var(--text-sm);
-  color: var(--color-ink);
-}
-
-.table > thead > tr > th {
-  font-weight: var(--font-semibold);
-  letter-spacing: var(--tracking-wide);
-  text-transform: uppercase;
-  font-size: var(--text-xs);
-  color: var(--color-cadet);
-  border-bottom-color: var(--color-surface-subtle);
-}
-
-.table-striped > tbody > tr:nth-of-type(odd) {
-  background-color: rgba(240, 243, 246, 0.6);
-}
-
-/* --- Pagination --- */
-.pagination > li > a,
-.pagination > li > span {
-  color: var(--color-dark-azure);
-  border-color: var(--color-surface-subtle);
-  font-size: var(--text-sm);
-}
-
-.pagination > .active > a,
-.pagination > .active > span {
-  background-color: var(--color-dark-azure);
-  border-color: var(--color-dark-azure);
-}
-
-.pagination > li > a:hover {
-  background-color: var(--color-surface-subtle);
-  color: var(--color-dark-azure);
-}
-
-/* --- Modales --- */
-.modal-content {
-  border-radius: var(--radius-xl);
-  border: none;
-  box-shadow: var(--shadow-lg);
-}
-
-.modal-header {
-  border-bottom-color: var(--color-surface-subtle);
-  font-weight: var(--font-semibold);
-  color: var(--color-ink);
-}
-
-.modal-footer {
-  border-top-color: var(--color-surface-subtle);
-}
-
-/* --- Wells --- */
-.well {
-  border-radius: var(--radius-lg);
-  background-color: var(--color-surface-subtle);
-  border-color: transparent;
-  box-shadow: none;
-}
-
 
 /* ------------------------------------------------------------
    6. COMPONENTES PROPIOS DE CARCHIC
    ------------------------------------------------------------ */
 
-/* Card de vehículo */
-.carchic-vehicle-card {
-  background-color: var(--color-surface);
-  border-radius: var(--radius-xl);
-  border: 1px solid var(--color-surface-subtle);
-  box-shadow: var(--shadow-sm);
-  overflow: hidden;
-  transition: box-shadow var(--transition-normal),
-              transform var(--transition-normal);
+.logo-carchic {
+  display: flex;
+  align-items: center;
+  transition: transform var(--transition-slow);
 }
 
-.carchic-vehicle-card:hover {
-  box-shadow: var(--shadow-md);
-  transform: translateY(-2px);
+.logo-carchic:hover {
+  transform: scale(1.015);
 }
 
-.carchic-vehicle-card__image {
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  object-fit: cover;
+.logo-carchic svg {
+  height: 36px;
+  width: auto;
+  display: block;
 }
 
-.carchic-vehicle-card__body {
+.menu-carchic-desktop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   padding: var(--space-4) var(--space-5);
+  background-color: var(--color-blue-500);
+  border-bottom: 1px solid var(--color-surface-subtle);
+  padding: var(--space-24) var(--space-32);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 -100vh 0 0 var(--color-blue-200);
 }
 
-.carchic-vehicle-card__title {
-  font-size: var(--text-md);
-  font-weight: var(--font-semibold);
-  color: var(--color-ink);
-  letter-spacing: var(--tracking-tight);
-  margin-bottom: var(--space-1);
+.menu-links-carchic {
+  display: flex;
+  align-items: center;
+  gap: var(--space-16);
+  color: var(--color-light);
 }
 
-.carchic-vehicle-card__meta {
-  font-size: var(--text-sm);
-  color: var(--color-cadet);
-  letter-spacing: var(--tracking-normal);
+.menu-link-carchic {
+  padding: 2px 16px;
+  cursor: pointer;
+  border-radius: var(--radius-md);
+  transition: var(--transition-slow);
 }
 
-.carchic-vehicle-card__price {
-  font-size: var(--text-lg);
-  font-weight: var(--font-bold);
-  color: var(--color-dark-azure);
-  margin-top: var(--space-3);
+.menu-link-carchic:hover {
+  background-color: var(--color-blue-200);
+  color: var(--color-white);
 }
 
-/* Badge de estado de subasta */
-.carchic-badge {
-  display: inline-block;
-  padding: var(--space-1) var(--space-3);
-  border-radius: var(--radius-sm);
-  font-size: var(--text-xs);
-  font-weight: var(--font-semibold);
-  letter-spacing: var(--tracking-wider);
-  text-transform: uppercase;
+.carchic-user-nav-link {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
 }
 
-.carchic-badge--live {
-  background-color: var(--color-racing-red);
-  color: #ffffff;
+.padding-widget-carchic {
+  padding: var(--space-32);
 }
 
-.carchic-badge--upcoming {
-  background-color: var(--color-arabian-sea);
-  color: #ffffff;
-}
-
-.carchic-badge--closed {
-  background-color: var(--color-surface-subtle);
-  color: var(--color-cadet);
-}
-
-/* Sección hero */
-.carchic-hero {
-  background-color: var(--color-american-navy);
-  color: #ffffff;
-  padding: var(--space-16) 0;
-}
-
-.carchic-hero .display-title {
-  color: #ffffff;
-}
-
-.carchic-hero p {
-  color: var(--color-light-blue);
+/* Breathing room horizontal y vertical para el contenido BidJS.
+   var(--space-40) compensa los -15px de .row y deja ~25px visibles a cada lado. */
+.container.bidlogix-app {
+  padding-top: var(--space-48);
+  padding-bottom: var(--space-64);
+  padding-left: var(--space-40);
+  padding-right: var(--space-40);
 }
 
 /* ------------------------------------------------------------
-   Navbar principal — moderna, fondo Dark Azure
-   Todo va scoped a .carchic-navbar para no tocar ningún
-   navbar de Bootstrap/BidJS.
+   HERO CAROUSEL
    ------------------------------------------------------------ */
-.carchic-navbar.navbar-default {
-  margin-bottom: 0;
-  background-color: var(--color-dark-azure);
+
+.carchic-hero-carousel {
+  line-height: 0;
+}
+
+.carchic-carousel-track-wrapper {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 5574 / 3135;
+}
+
+.carchic-carousel-track {
+  display: flex;
+  width: 300%;
+  height: 100%;
+  transition: transform 650ms cubic-bezier(0.77, 0, 0.175, 1);
+  will-change: transform;
+}
+
+.carchic-carousel-slide {
+  width: 33.333%;
+  flex-shrink: 0;
+}
+
+.carchic-carousel-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.carchic-carousel-track-wrapper::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(5, 22, 41, 0.80) 0%,
+    rgba(5, 22, 41, 0.25) 45%,
+    rgba(5, 22, 41, 0.05) 100%
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+.carchic-carousel-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: var(--space-48) var(--space-64);
+  z-index: 2;
+  text-align: center;
+  background: linear-gradient(to top, #051629 0%, transparent 100%);
+}
+
+.carchic-carousel-title {
+  font-family: var(--font-serif);
+  font-size: var(--text-6xl);
+  font-weight: var(--font-semibold);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  color: var(--color-white);
+  margin: var(--space-12) 0 var(--space-16);
+}
+
+.carchic-carousel-subtitle {
+  font-size: var(--text-md);
+  font-weight: var(--font-light);
+  line-height: var(--leading-relaxed);
+  color: var(--color-light);
+  margin: 0;
+}
+
+.carchic-carousel-dots {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-8);
+  margin-top: var(--space-24);
+}
+
+.carchic-carousel-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
   border: none;
+  background-color: rgba(255, 255, 255, 0.35);
+  cursor: pointer;
+  padding: 0;
+  transition: background-color var(--transition-normal), transform var(--transition-normal);
+}
+
+.carchic-carousel-dot.is-active {
+  background-color: var(--color-white);
+  transform: scale(1.4);
+}
+
+@media (max-width: 768px) {
+  .carchic-carousel-content {
+    padding: var(--space-32) var(--space-24);
+  }
+
+  .carchic-carousel-title {
+    font-size: var(--text-3xl);
+  }
+
+  .carchic-carousel-subtitle {
+    font-size: var(--text-base);
+  }
+}
+
+/* ------------------------------------------------------------
+   LOGIN HERO
+   ------------------------------------------------------------ */
+
+.carchic-login-hero {
+  background-color: var(--color-dark-200);
+  padding: var(--space-64) var(--space-32);
+  text-align: center;
+  color: var(--color-white);
+}
+
+.carchic-login-hero-inner {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.carchic-login-hero-title {
+  font-family: var(--font-serif);
+  font-size: var(--text-4xl);
+  font-weight: var(--font-semibold);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  margin: 0;
+  color: var(--color-white);
+}
+
+/* ------------------------------------------------------------
+   7. FOOTER
+   ------------------------------------------------------------ */
+
+.carchic-footer {
+  background-color: var(--color-dark-200);
+  color: var(--color-light);
+  min-height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: var(--space-64);
+}
+
+.carchic-footer-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--space-48);
+  flex: 1;
+}
+
+.carchic-footer-brand {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+  flex: 1;
+  max-width: 650px;
+}
+
+.carchic-footer-brand svg {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: all var(--transition-slow);
+}
+
+.carchic-footer-brand svg:hover {
+  transform: scale(1.015);
+  
+}
+
+.carchic-footer-brand p {
+  font-size: var(--text-sm);
+  line-height: var(--line-height-lg);
+  color: var(--color-dark-50);
+}
+
+.carchic-footer-cols {
+  display: flex;
+  gap: var(--space-48);
+}
+
+.carchic-footer-col {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-12);
+}
+
+.carchic-footer-heading {
+  font-size: var(--text-xs);
+  font-weight: var(--font-semibold);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wider);
+  color: var(--color-dark-50);
+  margin: 0 0 var(--space-4);
+}
+
+.carchic-footer-col a {
+  font-size: var(--text-sm);
+  color: var(--color-light);
+  opacity: 0.7;
+  transition: opacity var(--transition-fast);
+}
+
+.carchic-footer-col a:hover {
+  opacity: 1;
+}
+
+.carchic-footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: var(--space-24);
+  margin-top: var(--space-48);
+  font-size: var(--text-xs);
+  color: var(--color-dark-50);
+}
+
+/* ------------------------------------------------------------
+   7. BOTONES CARCHIC
+   ------------------------------------------------------------ */
+
+.btn-carchic-primary,
+.btn-carchic-secondary {
+  display: inline-block;
+  padding: var(--space-12) var(--space-24);
+  font-family: var(--font-primary);
+  font-size: var(--text-sm);
+  font-weight: var(--font-semibold);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  border: none;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: background-color var(--transition-slow), color var(--transition-fast);
+  text-decoration: none;
+}
+
+.btn-carchic-primary {
+  background-color: var(--color-blue-200);
+  color: var(--color-white);
+}
+
+.btn-carchic-primary:hover,
+.btn-carchic-primary:focus {
+  background-color: var(--color-blue-100);
+  color: var(--color-white);
+}
+
+.btn-carchic-secondary {
+  background-color: var(--color-dark-50);
+  color: var(--color-white);
+}
+
+.btn-carchic-secondary:hover,
+.btn-carchic-secondary:focus {
+  background-color: var(--color-dark-500);
+  color: var(--color-white);
+}
+
+/* ------------------------------------------------------------
+   8. ANIMACIONES DE ENTRADA (scroll-triggered)
+   ------------------------------------------------------------ */
+
+.carchic-animate {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.carchic-animate.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.carchic-animate--d1 { transition-delay: 100ms; }
+.carchic-animate--d2 { transition-delay: 200ms; }
+.carchic-animate--d3 { transition-delay: 300ms; }
+
+.carchic-animate--blur {
+  filter: blur(14px);
+  transform: translateY(8px);
+  transition: opacity 0.7s ease, transform 0.7s ease, filter 0.7s ease;
+}
+
+.carchic-animate--blur.is-visible {
+  filter: blur(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .carchic-animate {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .carchic-animate--blur {
+    filter: none;
+  }
+}
+
+/* ------------------------------------------------------------
+   9. PÁGINA SOBRE NOSOTROS
+   ------------------------------------------------------------ */
+
+.carchic-about-hero {
+  background-color: var(--color-dark-200);
+  padding: var(--space-64) var(--space-32);
+  color: var(--color-white);
+}
+
+.carchic-about-hero-inner {
+  max-width: 680px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.carchic-label-caps {
+  display: inline-block;
+  font-size: var(--text-xs);
+  font-weight: var(--font-semibold);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wider);
+  color: var(--color-light);
+  margin-bottom: var(--space-20);
+}
+
+.carchic-about-hero-title {
+  font-family: var(--font-serif);
+  font-size: var(--text-4xl);
+  font-weight: var(--font-semibold);
+  line-height: var(--leading-tight);
+  color: var(--color-white);
+  margin: 0 0 var(--space-24);
+  letter-spacing: var(--tracking-tight);
+}
+
+.carchic-about-hero-subtitle {
+  font-size: var(--text-md);
+  font-weight: var(--font-light);
+  line-height: var(--leading-relaxed);
+  color: var(--color-blue-50);
+  margin: 0;
+}
+
+.carchic-about-founders {
+  padding: var(--space-64);
+  background-color: var(--color-light);
+}
+
+.carchic-founder-grid {
+  display: flex;
+  gap: var(--space-32);
+  align-items: flex-start;
+  margin-bottom: var(--space-64);
+}
+
+.carchic-founder-card {
+  flex: 1;
+  background-color: var(--color-white);
+  border-radius: var(--radius-xl);
+  padding: var(--space-40);
   box-shadow: var(--shadow-sm);
 }
 
-/* Marca */
-.carchic-navbar__brand {
-  font-size: var(--text-base);
-  letter-spacing: var(--tracking-wider);
+.carchic-founder-card__header {
+  padding-bottom: var(--space-24);
+  margin-bottom: var(--space-24);
+  border-bottom: 1px solid var(--color-light);
+}
+
+.carchic-founder-card__name {
+  font-size: var(--text-2xl);
+  font-weight: var(--font-bold);
+  color: var(--color-dark-500);
+  letter-spacing: var(--tracking-tight);
+  margin: 0 0 var(--space-8);
+  line-height: var(--leading-tight);
+}
+
+.carchic-founder-card__role {
+  font-size: var(--text-xs);
+  font-weight: var(--font-semibold);
   text-transform: uppercase;
-  padding-top: 18px;
-  padding-bottom: 18px;
-}
-
-.carchic-navbar.navbar-default .navbar-brand {
-  color: var(--color-bg);
-}
-
-.carchic-navbar.navbar-default .navbar-brand:hover,
-.carchic-navbar.navbar-default .navbar-brand:focus {
-  color: #ffffff;
-  background-color: transparent;
-}
-
-/* Enlaces — texto claro sobre fondo azul */
-.carchic-navbar.navbar-default .navbar-nav > li > a {
-  color: var(--color-bg);
-  font-size: var(--text-sm);
-  font-weight: var(--font-medium);
   letter-spacing: var(--tracking-wide);
-  transition: background-color var(--transition-fast),
-              color var(--transition-fast);
+  color: var(--color-dark-50);
+  margin: 0;
 }
 
-.carchic-navbar.navbar-default .navbar-nav > li > a:hover,
-.carchic-navbar.navbar-default .navbar-nav > li > a:focus {
-  color: #ffffff;
-  background-color: var(--color-american-navy);
+.carchic-founder-card__bio p {
+  font-size: var(--text-base);
+  line-height: var(--leading-relaxed);
+  color: var(--color-dark-200);
+  margin: 0 0 var(--space-16);
 }
 
-/* Estado activo y enlace abierto */
-.carchic-navbar.navbar-default .navbar-nav > .active > a,
-.carchic-navbar.navbar-default .navbar-nav > .active > a:hover,
-.carchic-navbar.navbar-default .navbar-nav > .active > a:focus,
-.carchic-navbar.navbar-default .navbar-nav > .open > a,
-.carchic-navbar.navbar-default .navbar-nav > .open > a:hover,
-.carchic-navbar.navbar-default .navbar-nav > .open > a:focus {
-  color: #ffffff;
-  background-color: var(--color-american-navy);
+.carchic-founder-card__bio p:last-child {
+  margin-bottom: 0;
 }
 
-/* Alineación a la derecha en escritorio.
-   Quitamos los floats de Bootstrap y usamos flex para que
-   los enlaces queden agrupados a la derecha, con la marca
-   a la izquierda. */
-@media (min-width: 768px) {
-  .carchic-navbar .navbar-collapse {
-    display: flex !important;
-    align-items: center;
-    justify-content: flex-end;
-  }
-
-  .carchic-navbar .navbar-nav {
-    float: none;
-    margin: 0;
-  }
-
-  .carchic-navbar .navbar-nav.navbar-right {
-    margin-right: 0;
-  }
+.carchic-about-cta {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+  padding-bottom: var(--space-64);
 }
 
-/* Botón hamburguesa (móvil) sobre fondo oscuro */
-.carchic-navbar.navbar-default .navbar-toggle {
-  border-color: var(--color-light-blue);
+.carchic-about-cta-text {
+  font-size: var(--text-md);
+  line-height: var(--leading-relaxed);
+  color: var(--color-dark-100);
+  margin: 0 0 var(--space-32);
 }
 
-.carchic-navbar.navbar-default .navbar-toggle:hover,
-.carchic-navbar.navbar-default .navbar-toggle:focus {
-  background-color: var(--color-american-navy);
-}
+/* ------------------------------------------------------------
+   9. RESPONSIVE
+   ------------------------------------------------------------ */
 
-.carchic-navbar.navbar-default .navbar-toggle .icon-bar {
-  background-color: var(--color-bg);
-}
-
-/* Separadores del menú desplegado en móvil */
-.carchic-navbar.navbar-default .navbar-collapse,
-.carchic-navbar.navbar-default .navbar-form {
-  border-color: var(--color-american-navy);
-}
-
-/* Divider decorativo */
-.carchic-divider {
+.carchic-menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  background: none;
   border: none;
-  border-top: 1px solid var(--color-surface-subtle);
-  margin: var(--space-8) 0;
+  cursor: pointer;
+  padding: var(--space-8);
+}
+
+.carchic-menu-toggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background-color: var(--color-white);
+  border-radius: 2px;
+  transition: var(--transition-fast);
+}
+
+@media (max-width: 768px) {
+  .menu-carchic-desktop {
+    flex-wrap: wrap;
+    padding: var(--space-16) var(--space-24);
+  }
+
+  .carchic-menu-toggle {
+    display: flex;
+  }
+
+  .menu-links-carchic {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    padding: 0;
+    gap: var(--space-4);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height var(--transition-normal), padding var(--transition-normal);
+  }
+
+  .menu-carchic-desktop.is-open .menu-links-carchic {
+    max-height: 500px;
+    padding: var(--space-8) 0;
+  }
+
+  .menu-link-carchic {
+    width: 100%;
+    padding: var(--space-8) var(--space-12);
+  }
+
+  .carchic-footer {
+    padding: var(--space-48) var(--space-24) var(--space-24);
+  }
+
+  .carchic-footer-inner {
+    flex-direction: column;
+  }
+
+  .carchic-footer-cols {
+    flex-direction: column;
+    gap: var(--space-32);
+  }
+
+  .carchic-login-hero {
+    padding: var(--space-48) var(--space-24);
+  }
+
+  .carchic-login-hero-title {
+    font-size: var(--text-3xl);
+  }
+
+  .container.bidlogix-app {
+    padding-left: var(--space-24);
+    padding-right: var(--space-24);
+  }
+
+  .carchic-about-hero {
+    padding: var(--space-48) var(--space-24);
+  }
+
+  .carchic-about-hero-title {
+    font-size: var(--text-3xl);
+  }
+
+  .carchic-about-founders {
+    padding: var(--space-48) var(--space-24);
+  }
+
+  .carchic-founder-grid {
+    flex-direction: column;
+    margin-bottom: var(--space-48);
+  }
+
+  .carchic-founder-card {
+    padding: var(--space-32) var(--space-24);
+  }
+}
+
+/* --- About: Galería bento --- */
+.carchic-about-gallery {
+  padding: 0 var(--space-64) var(--space-64);
+}
+
+.carchic-bento {
+  display: grid;
+  grid-template-columns: 9fr 11fr;
+  gap: var(--space-8);
+  aspect-ratio: 16 / 9;
+}
+
+.carchic-bento__main,
+.carchic-bento__item {
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  position: relative;
+}
+
+.carchic-bento__stack {
+  display: grid;
+  grid-template-rows: 0.74fr 1.33fr;
+  gap: var(--space-8);
+  height: 100%;
+}
+
+.carchic-bento__main img,
+.carchic-bento__item img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+@media (max-width: 640px) {
+  .carchic-bento {
+    grid-template-columns: 1fr;
+    aspect-ratio: auto;
+  }
+
+  .carchic-bento__main {
+    aspect-ratio: 16 / 9;
+  }
+
+  .carchic-bento__stack {
+    grid-template-rows: auto;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .carchic-bento__item {
+    aspect-ratio: 4 / 3;
+  }
 }
