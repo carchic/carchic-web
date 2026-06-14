@@ -787,3 +787,111 @@ a {
     aspect-ratio: 4 / 3;
   }
 }
+
+/* ------------------------------------------------------------
+   PÁGINA: CONTACTO
+   ------------------------------------------------------------ */
+
+.carchic-contact-block {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 60vh;
+  padding: var(--space-64);
+}
+
+.carchic-contact-left {
+  background-color: var(--color-dark-500);
+  max-height: 40vh;
+  margin: auto 0;
+  padding: var(--space-64) 56px;
+  border-radius: var(--radius-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-32);
+  align-items: center;
+}
+
+.carchic-contact-title {
+  font-family: var(--font-serif);
+  font-size: var(--text-4xl);
+  font-weight: var(--font-regular);
+  line-height: var(--line-height-sm);
+  color: var(--color-white);
+  letter-spacing: var(--tracking-tight);
+  margin: 0;
+}
+
+.carchic-contact-subtitle {
+  color: var(--color-white);
+}
+
+.carchic-contact-right {
+  background-color: var(--color-light);
+  padding: var(--space-64) 56px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--space-48);
+}
+
+.carchic-contact-people {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-32);
+}
+
+.carchic-contact-person__name {
+  font-size: var(--text-md);
+  font-weight: var(--font-semibold);
+  color: var(--color-dark-500);
+  margin: 0 0 var(--space-4) 0;
+}
+
+.carchic-contact-person__phone {
+  font-size: var(--text-base);
+  color: var(--color-dark-50);
+  margin: 0;
+  letter-spacing: var(--tracking-normal);
+}
+
+.carchic-contact-email {
+  padding-top: var(--space-32);
+  border-top: 1px solid rgba(5, 22, 41, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.carchic-contact-email__label {
+  font-size: var(--text-xs);
+  font-weight: var(--font-medium);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wider);
+  color: var(--color-dark-50);
+}
+
+.carchic-contact-email__address {
+  font-size: var(--text-lg);
+  font-weight: var(--font-medium);
+  color: var(--color-blue-200);
+  transition: color var(--transition-fast);
+}
+
+.carchic-contact-email__address:hover {
+  color: var(--color-blue-100);
+}
+
+@media (max-width: 768px) {
+  .carchic-contact-block {
+    grid-template-columns: 1fr;
+  }
+
+  .carchic-contact-left,
+  .carchic-contact-right {
+    padding: var(--space-48) var(--space-24);
+  }
+
+  .carchic-contact-title {
+    font-size: var(--text-3xl);
+  }
+}
