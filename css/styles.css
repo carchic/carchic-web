@@ -27,7 +27,15 @@
   --color-dark-50: #546475;
 
   /* Acento */
-  --color-red: #b01212; /* Solo para énfasis puntual */
+  --color-error: #b01212; /* Solo para énfasis puntual */
+  --color-success: #00b900;
+  --color-info: #0080ff;
+  --color-warning: #ffbb00;
+  --color-alert: #ff8000;
+  --color-gold-1: #e29800;
+  --color-gold-2: #a67b22;
+
+  /* --- Colores de fondo --- */
 
   /* Fondos */
   --color-light: #f0f3f6; /* Fondo general de la web */
@@ -47,8 +55,8 @@
   --text-2xl: 2rem; /*  32px */
   --text-3xl: 2.5rem; /*  40px */
   --text-4xl: 3rem; /*  48px */
-  --text-5xl: 3.5rem; 
-  --text-6xl: 4rem; 
+  --text-5xl: 3.5rem;
+  --text-6xl: 4rem;
 
   /* Pesos */
   --font-light: 300;
@@ -90,6 +98,7 @@
   --space-40: 2.5rem; /* 40px */
   --space-48: 3rem; /* 48px */
   --space-64: 4rem; /* 64px */
+  --space-80: 5rem; /* 80px */
 
   /* --- Sombras --- */
   --shadow-sm: 0 1px 3px rgba(5, 22, 41, 0.08);
@@ -199,12 +208,12 @@ a {
 }
 
 /* Breathing room horizontal y vertical para el contenido BidJS.
-   var(--space-40) compensa los -15px de .row y deja ~25px visibles a cada lado. */
+   var(--space-64) compensa los -15px de .row y deja ~49px visibles a cada lado. */
 .container.bidlogix-app {
   padding-top: var(--space-48);
   padding-bottom: var(--space-64);
-  padding-left: var(--space-40);
-  padding-right: var(--space-40);
+  padding-left: var(--space-80);
+  padding-right: var(--space-80);
 }
 
 /* ------------------------------------------------------------
@@ -242,12 +251,12 @@ a {
 }
 
 .carchic-carousel-track-wrapper::after {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
   background: linear-gradient(
     to top,
-    rgba(5, 22, 41, 0.80) 0%,
+    rgba(5, 22, 41, 0.8) 0%,
     rgba(5, 22, 41, 0.25) 45%,
     rgba(5, 22, 41, 0.05) 100%
   );
@@ -299,7 +308,9 @@ a {
   background-color: rgba(255, 255, 255, 0.35);
   cursor: pointer;
   padding: 0;
-  transition: background-color var(--transition-normal), transform var(--transition-normal);
+  transition:
+    background-color var(--transition-normal),
+    transform var(--transition-normal);
 }
 
 .carchic-carousel-dot.is-active {
@@ -386,7 +397,6 @@ a {
 
 .carchic-footer-brand svg:hover {
   transform: scale(1.015);
-  
 }
 
 .carchic-footer-brand p {
@@ -450,7 +460,9 @@ a {
   border: none;
   border-radius: var(--radius-md);
   cursor: pointer;
-  transition: background-color var(--transition-slow), color var(--transition-fast);
+  transition:
+    background-color var(--transition-slow),
+    color var(--transition-fast);
   text-decoration: none;
 }
 
@@ -483,7 +495,9 @@ a {
 .carchic-animate {
   opacity: 0;
   transform: translateY(22px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease;
 }
 
 .carchic-animate.is-visible {
@@ -491,14 +505,23 @@ a {
   transform: translateY(0);
 }
 
-.carchic-animate--d1 { transition-delay: 100ms; }
-.carchic-animate--d2 { transition-delay: 200ms; }
-.carchic-animate--d3 { transition-delay: 300ms; }
+.carchic-animate--d1 {
+  transition-delay: 100ms;
+}
+.carchic-animate--d2 {
+  transition-delay: 200ms;
+}
+.carchic-animate--d3 {
+  transition-delay: 300ms;
+}
 
 .carchic-animate--blur {
   filter: blur(14px);
   transform: translateY(8px);
-  transition: opacity 0.7s ease, transform 0.7s ease, filter 0.7s ease;
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease,
+    filter 0.7s ease;
 }
 
 .carchic-animate--blur.is-visible {
@@ -671,12 +694,14 @@ a {
     gap: var(--space-4);
     max-height: 0;
     overflow: hidden;
-    transition: max-height var(--transition-normal), padding var(--transition-normal);
+    transition:
+      max-height var(--transition-normal),
+      padding var(--transition-normal);
   }
 
   .menu-carchic-desktop.is-open .menu-links-carchic {
     max-height: 500px;
-    padding: var(--space-8) 0;
+    padding: var(--space-16) 0;
   }
 
   .menu-link-carchic {
@@ -706,8 +731,8 @@ a {
   }
 
   .container.bidlogix-app {
-    padding-left: var(--space-24);
-    padding-right: var(--space-24);
+    padding-left: var(--space-32);
+    padding-right: var(--space-32);
   }
 
   .carchic-about-hero {
@@ -801,9 +826,9 @@ a {
 
 .carchic-contact-left {
   background-color: var(--color-dark-500);
-  max-height: 40vh;
+  max-height: 50vh;
   margin: auto 0;
-  padding: var(--space-64) 56px;
+  padding: var(--space-48);
   border-radius: var(--radius-lg);
   display: flex;
   flex-direction: column;
@@ -888,10 +913,148 @@ a {
 
   .carchic-contact-left,
   .carchic-contact-right {
-    padding: var(--space-48) var(--space-24);
+    padding: var(--space-24);
   }
 
   .carchic-contact-title {
     font-size: var(--text-3xl);
   }
+}
+
+/* ------------------------------------------------------------
+  OVERRIDE BIDJS WIDGET
+   ------------------------------------------------------------ */
+
+/* Filters box inside lot */
+span.bg-muted.list-group-item {
+  background-color: #fff;
+  border-radius: 6px;
+  border: none;
+  box-shadow: 1px 7px 7px 1px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Priview lot box */
+.panel-body {
+  border-radius: 6px;
+  border: none;
+}
+
+/* Primary button */
+.bidjs-app .btn-primary {
+  background-color: var(--color-blue-200);
+}
+
+/* Lot title */
+h2.h3.upcoming-auctions-item__title {
+  color: var(--color-blue-500);
+}
+
+/* Lot thubnail */
+img.img-responsive.lazy.lazyautosizes.ls-is-cached.lazyloaded {
+  border-radius: 6px;
+}
+
+/* Lot right badge */
+span.upcoming-auctions-item__badge.upcoming-auctions-item__badge--type.label.label-info {
+  background-color: var(--color-blue-50);
+}
+
+/* Lot left badge */
+span.upcoming-auctions-item__badge.upcoming-auctions-item__badge--featured.label.label-warning {
+  background-color: var(--color-success);
+}
+
+/* Tab auctions */
+a#upcoming-auctions__list--auctions-tab {
+  background: var(--color-light);
+  color: var(--color-blue-200);
+}
+
+/* Tab marketplace */
+a#upcoming-auctions__list--marketplace-tab {
+  color: var(--color-blue-200);
+}
+
+/* Product image in product page */
+img.img-responsive.lazy.lazyautosizes.lazyloaded {
+  border-radius: 6px;
+  width: 98%;
+  margin: auto;
+  margin-top: var(--space-4);
+}
+
+/* Product info in product page */
+.panel.panel-default {
+  border-radius: 8px;
+  border: none;
+}
+
+/* Right sidebar Sale product info */
+div#sale-info__container--heading {
+  background: transparent;
+  border: none;
+}
+
+/* Login Alert */
+div#inplay__alert--actions {
+  background: var(--color-blue-50);
+  border: none;
+  color: var(--color-white);
+}
+
+/* Container little thumbnails */
+.embla__container.embla__container--thumb {
+  padding: 0 8px;
+}
+
+.bg-muted.lot__status.panel-body {
+  background-color: var(--color-white);
+}
+
+.lot__actions.bg-muted.panel-body {
+  background-color: var(--color-white);
+}
+
+div#inplay__lot-details {
+  z-index: 0;
+}
+
+span.lot__reserve-label.label.label-info {
+  background-color: var(--color-blue-50);
+}
+
+span.lot__number.label.label-primary {
+  background-color: var(--color-gold-1);
+}
+
+a#auction__action--register {
+  background-color: var(--color-blue-500);
+  transition: all ease 0.5s;
+  border: none;
+}
+
+a#auction__action--register:hover {
+  background-color: var(--color-dark-100);
+}
+
+button#auction__action--sale-info {
+  background-color: var(--color-blue-50);
+  transition: all ease 0.5s;
+  border: none;
+}
+
+button#auction__action--sale-info:hover {
+  background-color: var(--color-dark-50);
+}
+
+button#auction__action--contact,
+button#auction__action--terms-info {
+  border: none;
+  transition: all ease 0.5s;
+}
+
+span.lot__contact.clickable.label.label-default {
+  background: linear-gradient(90deg , #54647589, #546475 )
+
 }
