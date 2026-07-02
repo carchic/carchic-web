@@ -9,6 +9,15 @@
 @import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600;700&display=swap");
 
 /* ------------------------------------------------------------
+   UTILITIES
+   ------------------------------------------------------------ */
+/* Oculta elementos que no deben mostrarse por ahora (ej. socios
+   que temporalmente no aparecen en la web). */
+.hidden {
+  display: none !important;
+}
+
+/* ------------------------------------------------------------
    2. CSS CUSTOM PROPERTIES (DESIGN TOKENS)
    ------------------------------------------------------------ */
 :root {
@@ -611,8 +620,8 @@ a {
 
 .carchic-founder-grid {
   display: flex;
+  flex-direction: column;
   gap: var(--space-32);
-  align-items: flex-start;
   margin-bottom: var(--space-64);
 }
 
