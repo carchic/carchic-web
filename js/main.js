@@ -68,3 +68,22 @@ const animObserver = new IntersectionObserver(function (entries) {
 document.querySelectorAll('.carchic-animate').forEach(function (el) {
   animObserver.observe(el)
 })
+
+// Ancla a secciones legales (ej. terms.html#privacidad): BidJS reescribe
+// el hash con su propio enrutador hashbang al inicializarse, deshaciendo
+// el salto nativo del navegador. Forzamos el scroll una vez cargada la
+// página, y de nuevo poco después por si BidJS lo pisa al arrancar.
+;(function () {
+  var targetId = location.hash.slice(1)
+  var target = targetId && document.getElementById(targetId)
+  if (!target) return
+
+  function scrollToAnchor() {
+    document.getElementById(targetId).scrollIntoView({ behavior: 'smooth', block: 'start' })
+  }
+
+  window.addEventListener('load', function () {
+    scrollToAnchor()
+    setTimeout(scrollToAnchor, 500)
+  })
+})()
