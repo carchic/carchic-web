@@ -363,6 +363,63 @@ a {
 }
 
 /* ------------------------------------------------------------
+   AUCTION BANNER
+   ------------------------------------------------------------ */
+
+.carchic-auction-banner img {
+  display: block;
+  width: 100%;
+  height: auto;
+  padding: 5%;
+  box-sizing: border-box;
+  border-radius: 80px;
+}
+
+/* Mismo 5% lateral que la imagen; el margen negativo absorbe su padding inferior.
+   line-height explícito porque .carchic-hero-carousel lo pone a 0. */
+.carchic-auction-banner-text {
+  margin-top: calc(var(--space-24) - 5%);
+  padding: 0 5% var(--space-48);
+  line-height: var(--leading-normal);
+}
+
+.carchic-auction-banner-lead {
+  font-size: var(--text-lg);
+  font-weight: var(--font-medium);
+  color: var(--color-dark-500);
+  margin: 0 0 var(--space-8);
+}
+
+.carchic-auction-banner-lead span {
+  font-weight: var(--font-regular);
+  color: var(--color-dark-50);
+}
+
+/* Subrayado progresivo: el gradiente crece de 0 a 100% de ancho. */
+.carchic-auction-banner-lead a,
+.carchic-auction-banner-lead a:hover,
+.carchic-auction-banner-lead a:focus {
+  color: var(--color-blue-200);
+  text-decoration: none;
+}
+
+.carchic-auction-banner-lead a {
+  background: linear-gradient(currentColor, currentColor) left bottom / 0 1px no-repeat;
+  transition: background-size var(--transition-slow);
+}
+
+.carchic-auction-banner-lead a:hover,
+.carchic-auction-banner-lead a:focus-visible {
+  background-size: 100% 1px;
+}
+
+.carchic-auction-banner-note {
+  font-size: var(--text-xs);
+  color: var(--color-dark-50);
+  margin: 0;
+}
+
+/* ------------------------------------------------------------
    LOGIN HERO
    ------------------------------------------------------------ */
 
