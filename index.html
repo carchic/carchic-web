@@ -109,7 +109,48 @@
     <div id="bidlogix-modal"></div>
   </div>
 
-  <!-- Contenedor principal de BidJS (obligatorio) -->
+
+  <!-- Aviso de registro — visible solo en #!/login y #!/register, controlado por JS.
+       Temporal: los emails de confirmación de BidJS llegan a spam. -->
+  <section id="carchic-register-notice" class="container carchic-register-notice" hidden>
+    <p class="carchic-label-caps">Importante antes de registrarte</p>
+    <h2 class="carchic-register-notice-title">Crea tu cuenta en 3 pasos</h2>
+    <ol class="carchic-register-steps">
+      <li class="carchic-register-step">
+        
+        <div class="carchic-register-step-header">
+          <svg viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M208,32H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32Zm-16,72h16v48H192Zm16-16H192V48h16ZM48,48H176V208H48ZM208,208H192V168h16v40Zm-56.25-42a39.76,39.76,0,0,0-17.19-23.34,32,32,0,1,0-45.12,0A39.84,39.84,0,0,0,72.25,166a8,8,0,0,0,15.5,4c2.64-10.25,13.06-18,24.25-18s21.62,7.73,24.25,18a8,8,0,1,0,15.5-4ZM96,120a16,16,0,1,1,16,16A16,16,0,0,1,96,120Z"/></svg>
+          <div>
+            <span class="carchic-register-step-number">Paso 1</span>
+            <p class="carchic-register-step-title">Rellena tus datos</p>
+          </div>
+        </div>
+        <p class="carchic-register-step-text">Pulsa «Create Account» y completa el formulario de registro.</p>
+      </li>
+      <li class="carchic-register-step is-highlighted">
+        <div class="carchic-register-step-header">
+          <svg viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M104,152a8,8,0,0,1-8,8H56a8,8,0,0,1,0-16H96A8,8,0,0,1,104,152Zm136-36v60a16,16,0,0,1-16,16H136v32a8,8,0,0,1-16,0V192H32a16,16,0,0,1-16-16V116A60.07,60.07,0,0,1,76,56h76V24a8,8,0,0,1,8-8h32a8,8,0,0,1,0,16H168V56h12A60.07,60.07,0,0,1,240,116ZM120,176V116a44,44,0,0,0-88,0v60Zm104-60a44.05,44.05,0,0,0-44-44H168v72a8,8,0,0,1-16,0V72H116.75A59.86,59.86,0,0,1,136,116v60h88Z"/></svg>
+          <div>
+            <span class="carchic-register-step-number">Paso 2</span>
+            <p class="carchic-register-step-title">Revisa la carpeta de spam</p>
+          </div>
+        </div>
+        <p class="carchic-register-step-text">Te enviaremos un email para confirmar tu cuenta. Si no lo ves en unos minutos, búscalo en <strong>spam o correo no deseado</strong>.</p>
+      </li>
+      <li class="carchic-register-step">
+        <div class="carchic-register-step-header">
+          <svg viewBox="0 0 256 256" fill="currentColor" aria-hidden="true"><path d="M240,104H229.2L201.42,41.5A16,16,0,0,0,186.8,32H69.2a16,16,0,0,0-14.62,9.5L26.8,104H16a8,8,0,0,0,0,16h8v80a16,16,0,0,0,16,16H64a16,16,0,0,0,16-16V184h96v16a16,16,0,0,0,16,16h24a16,16,0,0,0,16-16V120h8a8,8,0,0,0,0-16ZM69.2,48H186.8l24.89,56H44.31ZM64,200H40V184H64Zm128,0V184h24v16Zm24-32H40V120H216ZM56,144a8,8,0,0,1,8-8H80a8,8,0,0,1,0,16H64A8,8,0,0,1,56,144Zm112,0a8,8,0,0,1,8-8h16a8,8,0,0,1,0,16H176A8,8,0,0,1,168,144Z"/></svg>
+          <div>
+            <span class="carchic-register-step-number">Paso 3</span>
+            <p class="carchic-register-step-title">Confirma y empieza a pujar</p>
+          </div>
+        </div>
+        <p class="carchic-register-step-text">Pulsa el enlace del email, inicia sesión y encuentra tu próximo coche.</p>
+      </li>
+    </ol>
+  </section>
+
+    <!-- Contenedor principal de BidJS (obligatorio) -->
   <div class="container bidlogix-app">
     <div id="bidjs" class="bidjs-app"></div>
   </div>

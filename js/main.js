@@ -9,6 +9,15 @@ function syncLoginHero() {
 window.addEventListener('hashchange', syncLoginHero)
 syncLoginHero()
 
+// Aviso de registro: solo visible en #!/login y #!/register
+function syncRegisterNotice() {
+  var notice = document.getElementById('carchic-register-notice')
+  if (!notice) return
+  notice.hidden = location.hash !== '#!/login' && location.hash.indexOf('#!/register') !== 0
+}
+window.addEventListener('hashchange', syncRegisterNotice)
+syncRegisterNotice()
+
 // Hero carousel: solo visible en inicio (hash vacío o #!/)
 function syncCarouselHero() {
   var carousel = document.querySelector('.carchic-hero-carousel')
